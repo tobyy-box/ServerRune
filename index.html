@@ -1,25 +1,36 @@
-
+```html
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+
+    <title>???</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <main class="container">
-        <h1>Hello World!</h1>
-        <p>Meu primeiro site no GitHub Pages.</p>
-        <button onclick="mostrarMensagem()">Clique aqui</button>
-    </main>
+
+    <div class="screen">
+
+        <div class="title">
+            <h1>SERVER RUNE</h1>
+            <p>AN UNKNOWN STORY</p>
+        </div>
+
+        <button id="enter">ENTER</button>
+
+    </div>
 
     <script>
-        function mostrarMensagem() {
-            alert("Olá, mundo!");
-        }
+        const enter = document.getElementById("enter");
+
+        enter.addEventListener("click", () => {
+            window.location.href = "main.html";
+        });
     </script>
+
 </body>
 </html>
+```
