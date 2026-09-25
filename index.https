@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1>Hello World!</h1>
+        <p>Meu primeiro site no GitHub Pages.</p>
+        <button onclick="mostrarMensagem()">Clique aqui</button>
+    </main>
+
+    <script>
+        function mostrarMensagem() {
+            alert("Olá, mundo!");
+        }
+    </script>
+</body>
+</html>
