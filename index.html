@@ -1,31 +1,35 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>???</title>
+
+    <title>SERVER RUNE</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="screen">
+    <main class="start">
 
-        <div class="title">
-            <h1>SERVER RUNE</h1>
-            <p>AN UNKNOWN STORY</p>
-        </div>
+        <img
+            src="assets/logo.png"
+            class="logo"
+            alt="Server Rune"
+        >
 
         <button id="enter">ENTER</button>
 
-    </div>
+    </main>
 
     <script>
-        document.getElementById("enter").onclick = function () {
+        document.getElementById("enter").addEventListener("click", () => {
             window.location.href = "./...";
-        };
+        });
     </script>
 
 </body>
 </html>
+
