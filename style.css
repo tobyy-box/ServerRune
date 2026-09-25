@@ -1,4 +1,4 @@
-
+```css
 @font-face {
     font-family: "Determination Mono";
     src: url("assets/DeterminationMonoWeb.woff2") format("woff2");
@@ -21,8 +21,6 @@ body {
 body {
     background: #000;
     color: #fff;
-    font-family: "Determination Mono", monospace;
-
     overflow: hidden;
 }
 
@@ -36,7 +34,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    gap: 70px;
+    gap: 60px;
 }
 
 .logo {
@@ -52,37 +50,33 @@ body {
     animation: appear 1.2s ease-out;
 }
 
+/* ENTER */
+
 #enter {
-    background: transparent;
+    background: none;
+    border: none;
+    outline: none;
 
-    border: 2px solid #fff;
-
-    color: #fff;
+    color: white;
 
     font-family: "Determination Mono", monospace;
-    font-size: 28px;
-
-    padding: 10px 35px;
+    font-size: 32px;
 
     cursor: pointer;
 
+    padding: 0;
+
     letter-spacing: 2px;
 
-    transition:
-        background 0.15s,
-        color 0.15s,
-        transform 0.15s;
+    transition: color 0.1s;
 }
 
 #enter:hover {
-    background: #fff;
-    color: #000;
-
-    transform: scale(1.05);
+    color: #ffff00;
 }
 
 #enter:active {
-    transform: scale(0.95);
+    color: #ffff00;
 }
 
 @keyframes appear {
@@ -96,3 +90,4 @@ body {
         transform: scale(1);
     }
 }
+```
