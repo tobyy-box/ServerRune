@@ -1,0 +1,167 @@
+
+@font-face {
+    font-family: "Determination Mono";
+    src: url("../assets/DeterminationMonoWeb.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    background: #000;
+}
+
+body {
+    color: #00ff00;
+    font-family: "Determination Mono", monospace;
+}
+
+#start-screen {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #000;
+
+    z-index: 100;
+    cursor: pointer;
+}
+
+#start-text {
+    color: #00ff00;
+    font-family: "Determination Mono", monospace;
+    font-size: 28px;
+
+    text-shadow: 0 0 5px #00ff00;
+
+    animation: blink 1s steps(1) infinite;
+}
+
+#start-screen.hidden {
+    display: none;
+}
+
+.terminal {
+    width: min(1000px, 90vw);
+    margin: 60px auto;
+    background: #000;
+}
+
+.screen {
+    width: 100%;
+
+    color: #00ff00;
+    font-family: "Determination Mono", monospace;
+
+    font-size: 20px;
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+
+    text-shadow: 0 0 5px #00ff00;
+}
+
+.line {
+    width: 100%;
+    margin-bottom: 8px;
+
+    color: #00ff00;
+    font-family: "Determination Mono", monospace;
+
+    white-space: pre-wrap;
+}
+
+.user-line {
+    color: #00ff00;
+}
+
+.system-line {
+    color: #00ff00;
+}
+
+.input-line {
+    display: flex;
+    align-items: baseline;
+
+    width: 100%;
+}
+
+.prompt {
+    flex-shrink: 0;
+}
+
+#command-input {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #00ff00;
+
+    font-family: "Determination Mono", monospace;
+    font-size: 20px;
+    line-height: 1.7;
+
+    caret-color: #00ff00;
+}
+
+#command-input::selection {
+    background: #00ff00;
+    color: #000;
+}
+
+.cursor {
+    display: inline-block;
+
+    width: 12px;
+    height: 20px;
+
+    margin-left: 5px;
+
+    vertical-align: middle;
+
+    background: #00ff00;
+
+    animation: blink 0.8s steps(1) infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .terminal {
+        width: 90vw;
+        margin: 30px auto;
+    }
+
+    .screen,
+    #command-input {
+        font-size: 17px;
+    }
+}
