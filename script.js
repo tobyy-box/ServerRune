@@ -8,17 +8,16 @@
 // ENTER BUTTON
 // ========================================
 
+
 const enterButton = document.getElementById("enter");
 
 if (enterButton) {
-
     enterButton.addEventListener("click", () => {
-
         window.location.href = "./...-/index.html";
-
     });
-
 }
+
+
 
 
 
