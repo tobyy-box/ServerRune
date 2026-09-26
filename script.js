@@ -15,7 +15,7 @@ if (enterButton) {
     enterButton.addEventListener("click", () => {
 
 
-        window.location.href = "./none/index.html";
+        window.location.href = "./none/";
 
 
     });
