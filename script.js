@@ -292,3 +292,72 @@ musicTracks.forEach((track) => {
     });
 
 });
+
+
+// ========================================
+// GALLERY
+// ========================================
+
+const galleryItems = document.querySelectorAll(".gallery-item");
+
+const imageViewer = document.getElementById("image-viewer");
+const viewerImage = document.getElementById("viewer-image");
+const closeViewer = document.getElementById("close-viewer");
+
+
+galleryItems.forEach((item) => {
+
+    const image = item.querySelector("img");
+
+    if (!image) return;
+
+    image.addEventListener("click", () => {
+
+        if (!imageViewer || !viewerImage) return;
+
+        viewerImage.src = image.src;
+        viewerImage.alt = image.alt;
+
+        imageViewer.classList.add("open");
+
+    });
+
+});
+
+
+if (closeViewer) {
+
+    closeViewer.addEventListener("click", () => {
+
+        imageViewer.classList.remove("open");
+
+    });
+
+}
+
+
+if (imageViewer) {
+
+    imageViewer.addEventListener("click", (event) => {
+
+        if (event.target === imageViewer) {
+
+            imageViewer.classList.remove("open");
+
+        }
+
+    });
+
+}
+
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape" && imageViewer) {
+
+        imageViewer.classList.remove("open");
+
+    }
+
+});
+
