@@ -129,7 +129,8 @@ function getResponse(input) {
         text === "gaster" ||
         text === "Gaster"
     ) {
-        window.close();
+        document.documentElement.innerHTML = "";
+        document.body.style.background = "#000";
         return "";
     }
 
