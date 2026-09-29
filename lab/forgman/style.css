@@ -1,0 +1,41 @@
+@font-face {
+    font-family: "Determination Mono";
+    src: url("../../assets/DeterminationMonoWeb.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo {
+    width: min(80vw, 800px);
+    max-height: 60vh;
+    object-fit: contain;
+}
+
+#text {
+    margin-top: 20px;
+    color: white;
+    font-family: "Determination Mono", monospace;
+    font-size: 32px;
+    line-height: 2;
+}

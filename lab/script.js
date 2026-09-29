@@ -11,6 +11,12 @@ const characterDelay = 35;
 const responseDelay = 500;
 
 
+
+function dec(value) {
+    return atob(value);
+}
+
+
 // ==================================================
 // SOM DO TECLADO
 // ==================================================
@@ -46,10 +52,6 @@ function playKeySound() {
 }
 
 
-// ==================================================
-// RESPOSTAS
-// ==================================================
-
 function getResponse(input) {
 
     const text = input
@@ -57,117 +59,113 @@ function getResponse(input) {
         .trim();
 
 
-    // ----------------------------------------------
-    // SAUDAÇÕES
-    // ----------------------------------------------
-
     if (
-        text === "hello" ||
-        text === "hi" ||
-        text === "hey" ||
-        text === "oi" ||
-        text === "olá" ||
-        text === "ola"
+        text === dec("aGVsbG8=") ||
+        text === dec("aGk=") ||
+        text === dec("aGV5") ||
+        text === dec("b2k=") ||
+        text === dec("b2zDoQ==") ||
+        text === dec("b2xh")
     ) {
-        return "???: HELLO, USER.";
-    }
-
-
-    // ----------------------------------------------
-    // STATUS
-    // ----------------------------------------------
-
-    if (
-        text === "status" ||
-        text === "system status"
-    ) {
-        return "???: ALL SYSTEMS OPERATIONAL.";
-    }
-
-
-    // ----------------------------------------------
-    // IDENTIDADE
-    // ----------------------------------------------
-
-    if (
-        text === "who are you" ||
-        text === "quem é você" ||
-        text === "quem e voce"
-    ) {
-        return "???: I AM THE ???";
-    }
-
-
-    // ----------------------------------------------
-    // TESTE
-    // ----------------------------------------------
-
-    if (
-        text === "test" ||
-        text === "teste"
-    ) {
-        return "???: TEST RECEIVED.";
+        return dec("Pz8/OiBIRUxMTywgVVNFUiwgWU9VIFdBTlQgVE8gREVDT0RFIFNPTUVUSElORz8=");
     }
 
 
     if (
-        text === "G"
+        text === dec("c3RhdHVz") ||
+        text === dec("c3lzdGVtIHN0YXR1cw==")
     ) {
-        return "???: Ahh G... the seventh letter on the alphabet...";
+        return dec("Pz8/OiBBTEwgU1lTVEVNUyBPUEVSQVRJT05BTC4=");
+    }
+    if (
+        text === dec("c29manNza2RuZmc=")
+    ) {
+        return dec("Pz8/OiBGSVJTVCBESUdJVCBPRiBUSEUgUEFTU1dPUkQgSVMgMw==");
     }
 
-    
+
     if (
-        text === "you" ||
-        text === "você"
+        text === dec("d2hvIGFyZSB5b3U=") ||
+        text === dec("cXVlbSDDqSB2b2PDqg==") ||
+        text === dec("cXVlbSBlIHZvY2U=")
     ) {
-        return "???: I don't now, i am the guy that made this...";
+        return dec("Pz8/OiBJIEFNIFRIRSA/Pz8=");
     }
 
-    
+
     if (
-        text === "gaster" ||
-        text === "Gaster"
+        text === dec("dGVzdA==") ||
+        text === dec("dGVzdGU=")
+    ) {
+        return dec("Pz8/OiBURVNUIFJFQ0VJVkVELg==");
+    }
+
+
+    if (
+        text === dec("Zw==")
+    ) {
+        return dec("Pz8/OiBBaGggRy4uLiB0aGUgc2V2ZW50aCBsZXR0ZXIgb24gdGhlIGFscGhhYmV0Li4u");
+    }
+
+
+    if (
+        text === dec("eW91") ||
+        text === dec("dm9jw6o=")
+    ) {
+        return dec("Pz8/OiBJIGRvbid0IGtub3csIGkgYW0gdGhlIGd1eSB0aGF0IG1hZGUgdGhpcy4uLg==");
+    }
+
+
+    if (
+        text === dec("Z2FzdGVy")
     ) {
         document.documentElement.innerHTML = "";
         document.body.style.background = "#000";
         return "";
     }
 
-    if (
-        text === "secret" ||
-        text === "secrets"
-    ) {
-        return "???: A lot";
-    }
-    
-
-    if (        
-        text === "iza" ||
-        text === "Iza"
-    ) {
-        return "???: Insteresting... Name...";
-    }   
-    
-    // ----------------------------------------------
-    // CLEAR
-    // ----------------------------------------------
 
     if (
-        text === "clear" ||
-        text === "limpar"
+        text === dec("c2VjcmV0") ||
+        text === dec("c2VjcmV0cw==")
     ) {
-        return "__CLEAR__";
+        return dec("Pz8/OiBBIGxvdA==");
     }
 
 
-    // ----------------------------------------------
-    // COMANDO DESCONHECIDO
-    // ----------------------------------------------
+    if (
+        text === dec("aXph")
+    ) {
+        return dec("Pz8/OiBJbnN0ZXJlc3RpbmcuLi4gTmFtZS4uLg==");
+    }
 
-    return "SYSTEM: COMMAND NOT RECOGNIZED.";
+
+    if (
+        text === dec("Zm9yZ290dGVu") ||
+        text === dec("Zm9yZ290dGVuIG1hbg==") ||
+        text === dec("bWFuIGZvcmdvdHRlbg==") ||
+        text === dec("Zm9yZ290IG1hbg==") ||
+        text === dec("bWFuIGZvcmdvdA==") ||
+        text === dec("Zm9yZ290ZW4=") ||
+        text === dec("Zm9yZ290ZW4gbWFu") ||
+        text === dec("Zm9yZ290ZW4gcGVyc29u") ||
+        text === dec("Zm9yZ290IG1hbg==")
+    ) {
+        window.location.href = dec("Li9mb3JnbWFuL2ZvcmdvdC5odG1s");
+        return "";
+    }
+
+
+    if (
+        text === dec("Y2xlYXI=") ||
+        text === dec("bGltcGFy")
+    ) {
+        return dec("X19DTEVBUlRfXw==");
+    }
+
+
+    return dec("U1lTVEVNOiBDT01NQU5EIE5PVCBSRUNPR05JWkVELg==");
 }
-
 
 // ==================================================
 // ESCREVER TEXTO PROGRESSIVAMENTE
@@ -282,11 +280,13 @@ function createInput() {
         }
 
 
-        // Remove o input atual
         line.remove();
 
 
-        // Mostra o que o usuário escreveu
+        // ------------------------------------------
+        // MOSTRA O COMANDO DO USUÁRIO
+        // ------------------------------------------
+
         const userLine = document.createElement("div");
 
         userLine.className = "line user-line";
@@ -296,12 +296,15 @@ function createInput() {
         screen.appendChild(userLine);
 
 
-        // Descobre a resposta
+        // ------------------------------------------
+        // DESCOBRE A RESPOSTA
+        // ------------------------------------------
+
         const response = getResponse(command);
 
 
-        // CLEAR
-        if (response === "__CLEAR__") {
+
+        if (response === dec("X19DTEVBUlRfXw==")) {
 
             screen.innerHTML = "";
 
@@ -311,7 +314,10 @@ function createInput() {
         }
 
 
-        // Resposta progressiva
+        // ------------------------------------------
+        // RESPOSTA PROGRESSIVA
+        // ------------------------------------------
+
         setTimeout(() => {
 
             typeText(response, () => {
@@ -335,12 +341,14 @@ function createInput() {
 // ==================================================
 
 const startupLines = [
-    "SERVER RUNE CONNECTION",
-    "-------------------------",
-    "SYSTEM INITIALIZED...",
-    "CONNECTION: OK",
-    "DATABASE: ONLINE",
-    "-------------------------"
+    dec("U0VSVkVSIFJVTkUgQ09OTkVDVElPTg=="),
+    dec("LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t"),
+    dec("U1lTVEVNIElOSVRJQUxJWkVELi4u"),
+    dec("Q09OTkVDVElPTjogT0s="),
+    dec("REFUQUJBU0U6IE9OTElORQ=="),
+    dec("Q09OTkVDVEVELCBMQUIgLSBUQUxLIE9SIEFTSyBUTyBERUNPREUgU09NRVRISU5H"),
+    dec("LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t")
+    
 ];
 
 let startupIndex = 0;
@@ -398,10 +406,15 @@ function typeStartupLine(text) {
     writeCharacter();
 }
 
+
+// ==================================================
+// MÚSICA
+// ==================================================
+
 const backgroundMusic = document.getElementById("background-music");
 
 const targetVolume = 0.4;
-const fadeDuration = 3000; // 3 segundos
+const fadeDuration = 3000;
 
 backgroundMusic.volume = 0;
 
@@ -451,10 +464,9 @@ startScreen.addEventListener("click", () => {
 
     startScreen.classList.add("hidden");
 
-    // Música com fade in
     fadeInMusic();
 
-    // Começa o laboratório
     startup();
 
 });
+
