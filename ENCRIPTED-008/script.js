@@ -151,7 +151,7 @@ function getResponse(input) {
         text === dec("Zm9yZ290ZW4gcGVyc29u") ||
         text === dec("Zm9yZ290IG1hbg==")
     ) {
-        window.location.href = dec("Li9mb3JnbWFuL2ZvcmdvdC5odG1s");
+        window.location.href = dec("Li9FTkNSSVBURUQtMDEwL0VOQ1JJUFRFRC5odG1s");
         return "";
     }
 

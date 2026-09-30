@@ -3,6 +3,9 @@
 // SERVER RUNE - SCRIPT.JS
 // ========================================
 
+function dec(value) {
+    return atob(value);
+}
 
 // ========================================
 // ENTER BUTTON
@@ -15,7 +18,7 @@ if (enterButton) {
     enterButton.addEventListener("click", () => {
 
 
-        window.location.href = "./none/";
+        window.location.href = dec("Li9FTkNSSVBURUQtMDA5Lw==");
 
 
     });
