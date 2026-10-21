@@ -154,6 +154,16 @@ function getResponse(input) {
         window.location.href = dec("Li9FTkNSSVBURUQtMDEwL0VOQ1JJUFRFRC5odG1s");
         return "";
     }
+    if (text === dec("bm8gd2F5")
+    )  {
+        window.location.href = dec("Li9FTkNSSVBURUQtMDEwL0VOQ1JJUFRFRDAwMS5odG1s");
+        return "";        
+    }  
+    if (text === dec("MTc5OTA0")
+    )  {
+        window.location.href = dec("Li9FTkNSSVBURUQtMDEwL0VOQ1JJUFRFRDAwMi5odG1s");
+        return "";        
+    }  
 
 
     if (
