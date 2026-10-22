@@ -133,12 +133,6 @@ function getResponse(input) {
     }
 
 
-    if (
-        text === dec("aXph")
-    ) {
-        return dec("Pz8/OiBJbnN0ZXJlc3RpbmcuLi4gTmFtZS4uLg==");
-    }
-
 
     if (
         text === dec("Zm9yZ290dGVu") ||
@@ -164,7 +158,11 @@ function getResponse(input) {
         window.location.href = dec("Li9FTkNSSVBURUQtMDEwL0VOQ1JJUFRFRDAwMi5odG1s");
         return "";        
     }  
-
+    if (text === dec("aXph")
+    )  {
+        window.location.href = dec("Li9FTkNSSVBURUQtMDEwL0VOQ1JJUFRFRDAwMy5odG1s");
+        return "";        
+    }  
 
     if (
         text === dec("Y2xlYXI=") ||
