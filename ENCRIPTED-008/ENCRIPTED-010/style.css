@@ -46,3 +46,34 @@ audio {
     width: min(320px, 90vw);
     max-width: 100%;
 }
+
+.hidden-message {
+    position: fixed;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    color: #000;
+    font-family: "Determination Mono", monospace;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.hidden-message:hover,
+.hidden-message:focus-visible {
+    color: #ffeb00;
+    outline: none;
+}
+
+.top-message {
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-family: "Determination Mono", monospace;
+    font-size: clamp(12px, 1.5vw, 20px);
+    line-height: 1.7;
+    text-align: center;
+    white-space: nowrap;
+}
+

@@ -1,0 +1,410 @@
+@font-face {
+    font-family: "Determination Mono";
+    src: url("/assets/DeterminationMonoWeb.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: "Determination Mono", monospace;
+}
+
+body {
+    min-height: 100vh;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    background: #000;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+    color: #000;
+    background: #fff;
+}
+
+button:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+#computer {
+    width: min(1100px, 100%);
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.brand {
+    font-size: 19px;
+}
+
+.brand span {
+    color: #888;
+}
+
+#system-status {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.explorer {
+    border: 1px solid #777;
+    background: #000;
+}
+
+.window-title {
+    padding: 12px 14px;
+    border-bottom: 1px solid #555;
+    display: flex;
+    justify-content: space-between;
+    background: #111;
+}
+
+.window-controls {
+    color: #888;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+#path {
+    border: 1px solid #444;
+    color: #aaa;
+    padding: 9px;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr);
+    min-height: 400px;
+}
+
+.sidebar {
+    padding: 14px 10px;
+    border-right: 1px solid #444;
+}
+
+.side-heading {
+    color: #777;
+    font-size: 12px;
+    margin: 8px 0 12px;
+}
+
+.side-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-color: transparent;
+    margin-bottom: 4px;
+    padding: 9px 5px;
+    font-size: 13px;
+}
+
+.side-link:hover,
+.side-link.selected {
+    background: #181818;
+    color: #fff;
+    border-color: #555;
+}
+
+.side-info {
+    color: #777;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+.file-area {
+    min-width: 0;
+    padding: 10px;
+}
+
+.file-heading,
+.file-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 100px 90px;
+    gap: 10px;
+    align-items: center;
+}
+
+.file-heading {
+    padding: 10px;
+    color: #777;
+    border-bottom: 1px solid #444;
+    font-size: 12px;
+}
+
+.file-row {
+    width: 100%;
+    text-align: left;
+    border: 1px solid transparent;
+    margin-top: 3px;
+    padding: 11px 10px;
+    font-size: 14px;
+    background: transparent;
+}
+
+.file-row:hover {
+    background: #171717;
+    color: #fff;
+    border-color: #555;
+}
+
+.file-name {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.file-icon {
+    display: inline-block;
+    width: 25px;
+    color: #aaa;
+}
+
+.file-type,
+.file-status {
+    color: #888;
+    font-size: 12px;
+}
+
+.file-status.locked {
+    color: #fff;
+}
+
+#empty-message {
+    padding: 30px 10px;
+    color: #666;
+    text-align: center;
+}
+
+.statusbar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 12px;
+    border-top: 1px solid #444;
+    color: #777;
+    font-size: 12px;
+}
+
+.footer-text {
+    color: #555;
+    font-size: 12px;
+    margin-top: 14px;
+    text-align: center;
+}
+
+/* JANELAS */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.94);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.overlay[hidden] {
+    display: none;
+}
+
+.viewer-window,
+.password-window {
+    width: min(720px, 100%);
+    max-height: 85vh;
+    overflow: auto;
+    border: 1px solid #888;
+    background: #000;
+}
+
+.password-window {
+    width: min(480px, 100%);
+}
+
+.viewer-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px;
+    background: #111;
+    border-bottom: 1px solid #555;
+}
+
+.viewer-title button {
+    padding: 5px 10px;
+}
+
+#viewer-content {
+    padding: 24px;
+    min-height: 160px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+}
+
+#viewer-content img {
+    display: block;
+    max-width: 100%;
+    max-height: 55vh;
+    margin: 12px auto;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+#viewer-content .image-caption {
+    text-align: center;
+    color: #888;
+    margin-top: 15px;
+}
+
+.viewer-footer {
+    border-top: 1px solid #444;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #777;
+    font-size: 12px;
+}
+
+.password-content {
+    padding: 24px;
+}
+
+.lock-icon {
+    text-align: center;
+    border: 1px dashed #555;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#password-description {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+#password-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#password-input {
+    width: 100%;
+    padding: 12px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #666;
+    outline: none;
+}
+
+#password-input:focus {
+    border-color: #fff;
+}
+
+#password-error {
+    color: #aaa;
+    min-height: 20px;
+    font-size: 13px;
+}
+
+.password-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #444;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4px;
+    }
+
+    .side-heading {
+        grid-column: 1 / -1;
+    }
+
+    .file-heading,
+    .file-row {
+        grid-template-columns: minmax(0, 1fr) 65px 65px;
+        gap: 5px;
+        font-size: 12px;
+    }
+
+    .file-type,
+    .file-status {
+        font-size: 10px;
+    }
+
+    .toolbar {
+        flex-wrap: wrap;
+    }
+
+    #path {
+        flex-basis: 100%;
+    }
+}
+html,
+body,
+button,
+input,
+#computer {
+    font-family: "Determination Mono", monospace !important;
+}

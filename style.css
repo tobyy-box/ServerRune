@@ -3,7 +3,7 @@
 
     font-family: "Determination Mono";
 
-    src: url("./assets/DeterminationMonoWeb.ttf")
+    src: url("/assets/DeterminationMonoWeb.ttf")
         format("truetype");
 
     font-weight: normal;

@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FILE SYSTEM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main id="computer">
+
+        <header class="topbar">
+            <div class="brand">SERVER RUNE <span>// FILE SYSTEM</span></div>
+            <div id="system-status">SYSTEM: ONLINE</div>
+        </header>
+
+        <section class="explorer">
+
+            <div class="window-title">
+                <span>FILE EXPLORER</span>
+                <span class="window-controls">_ □ X</span>
+            </div>
+
+            <div class="toolbar">
+                <button id="back-button" disabled>&lt; BACK</button>
+                <button id="home-button">HOME</button>
+                <div id="path">C:\</div>
+            </div>
+
+            <div class="content">
+
+                <aside class="sidebar">
+                    <div class="side-heading">LOCATIONS</div>
+                    <button class="side-link" data-location="root">▣ THIS COMPUTER</button>
+                    <button class="side-link" data-location="documents">▤ DOCUMENTS</button>
+                    <button class="side-link" data-location="images">▧ IMAGES</button>
+                    <button class="side-link" data-location="system">▣ SYSTEM</button>
+
+                    <div class="side-heading">INFORMATION</div>
+                    <p class="side-info">SERVER: SR-07</p>
+                    <p class="side-info">ACCESS: LIMITED</p>
+                    <p class="side-info">USER: UNKNOWN</p>
+                </aside>
+
+                <section class="file-area">
+                    <div class="file-heading">
+                        <span>NAME</span>
+                        <span>TYPE</span>
+                        <span>STATUS</span>
+                    </div>
+
+                    <div id="file-list"></div>
+
+                    <div id="empty-message" hidden>
+                        THIS DIRECTORY IS EMPTY.
+                    </div>
+                </section>
+
+            </div>
+
+            <footer class="statusbar">
+                <span id="item-count">0 OBJECTS</span>
+                <span>SERVER RUNE OS [UNSTABLE]</span>
+            </footer>
+
+        </section>
+
+        <div class="footer-text">
+            DO NOT MODIFY SYSTEM FILES WITHOUT AUTHORIZATION.
+        </div>
+
+    </main>
+
+    <!-- JANELA DE CONTEÚDO -->
+    <div id="viewer" class="overlay" hidden>
+        <section class="viewer-window">
+            <header class="viewer-title">
+                <span id="viewer-name">FILE</span>
+                <button id="close-viewer">X</button>
+            </header>
+
+            <div id="viewer-content"></div>
+
+            <footer class="viewer-footer">
+                <span id="viewer-status">READ ONLY</span>
+                <button id="viewer-close-bottom">CLOSE</button>
+            </footer>
+        </section>
+    </div>
+
+    <!-- JANELA DE SENHA -->
+    <div id="password-overlay" class="overlay" hidden>
+        <section class="password-window">
+            <header class="viewer-title">
+                <span>ACCESS RESTRICTED</span>
+                <button id="close-password">X</button>
+            </header>
+
+            <div class="password-content">
+                <div class="lock-icon">[ LOCKED FILE ]</div>
+                <p id="password-description">PASSWORD REQUIRED.</p>
+
+                <form id="password-form">
+                    <label for="password-input">ENTER PASSWORD:</label>
+                    <input id="password-input" type="password"
+                           autocomplete="off" spellcheck="false">
+
+                    <p id="password-error"></p>
+
+                    <div class="password-actions">
+                        <button type="submit">UNLOCK</button>
+                        <button type="button" id="cancel-password">CANCEL</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

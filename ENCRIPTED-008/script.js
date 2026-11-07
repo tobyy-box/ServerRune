@@ -158,11 +158,23 @@ function getResponse(input) {
         window.location.href = dec("Li9FTkNSSVBURUQtMDEwL0VOQ1JJUFRFRDAwMi5odG1s");
         return "";        
     }  
+    if (text === dec("YWxwaGFiZXQ=")
+    )  {
+        window.location.href = dec("Li9FTkNSSVBURUQtMDEwL0VOQ1JJUFRFRDAwNC5odG1s");
+        return "";        
+    }
+
+    if (text === dec("MjM5MDk=")
+    )  {
+        window.location.href = dec("Li9FTkNSSVBURUQtMDEzL0VOQ1JJUFRFRC5odG1s");
+        return "";        
+    } 
+
     if (text === dec("aXph")
     )  {
         window.location.href = dec("Li9FTkNSSVBURUQtMDEwL0VOQ1JJUFRFRDAwMy5odG1s");
         return "";        
-    }  
+    } 
 
     if (
         text === dec("Y2xlYXI=") ||
@@ -171,6 +183,13 @@ function getResponse(input) {
         return dec("X19DTEVBUlRfXw==");
     }
 
+    if (
+        text === dec("RklMRVM=") ||
+        text === dec("ZmlsZXM=")
+    ) {
+        window.location.href = dec("Li9FTkNSSVBURUQtMDExL0VOQ1JJUFRFRC5odG1s");
+        return "";
+    }
 
     return dec("U1lTVEVNOiBDT01NQU5EIE5PVCBSRUNPR05JWkVELg==");
 }
@@ -471,10 +490,117 @@ startScreen.addEventListener("click", () => {
     started = true;
 
     startScreen.classList.add("hidden");
-
     fadeInMusic();
 
     startup();
 
+    scheduleFlash();
+
 });
 
+/* ========================================
+   FLASHES SECRETOS — SERVER RUNE
+======================================== */
+
+// Frases secretas
+const flashPhrases = [
+    dec("VEhFIFNFVkVOVEggTEVUVEVS"),
+    dec("VFlQRSBGSUxFUw=="),
+    dec("VFlQRSBGSUxFUyBUTyBBQ0VTUw=="),
+    dec("RklMRVMuLi4=")
+];
+
+// Intervalo aleatório entre os flashes
+const flashMinDelay = 15; // segundos
+const flashMaxDelay = 35; // segundos
+
+// Tempo em que a tela fica preta
+const flashDuration = 900; // milissegundos
+
+// Chance de um flash acontecer em cada tentativa
+const flashChance = 0.85;
+
+
+// ========================================
+// CRIAR A TELA PRETA
+// ========================================
+
+const flashScreen = document.createElement("div");
+
+flashScreen.id = "flash-screen";
+
+document.body.appendChild(flashScreen);
+
+
+// ========================================
+// CONTROLE DO FLASH
+// ========================================
+
+let flashTimeout = null;
+let flashActive = false;
+
+
+function scheduleFlash() {
+    if (!started) return;
+
+    const delay = (
+        Math.random() * (flashMaxDelay - flashMinDelay)
+        + flashMinDelay
+    ) * 1000;
+
+    flashTimeout = setTimeout(showFlash, delay);
+}
+
+
+function showFlash() {
+    if (!started || flashActive) return;
+
+    // Se a tela inicial ainda estiver aberta, tentar depois
+    if (
+        startScreen &&
+        !startScreen.classList.contains("hidden")
+    ) {
+        scheduleFlash();
+        return;
+    }
+
+    // Algumas tentativas não mostram nada
+    if (Math.random() >= flashChance) {
+        scheduleFlash();
+        return;
+    }
+
+    flashActive = true;
+
+    // Escolher uma frase aleatória
+    const phrase = flashPhrases[
+        Math.floor(Math.random() * flashPhrases.length)
+    ];
+
+    // Guardar o estado original da música
+    const wasMuted = backgroundMusic.muted;
+    const previousVolume = backgroundMusic.volume;
+
+    // Mutar a música
+    backgroundMusic.muted = true;
+
+    // Mostrar a tela preta e a frase
+    flashScreen.textContent = phrase;
+    flashScreen.classList.add("active");
+
+    // Encerrar o flash
+    setTimeout(() => {
+        flashScreen.classList.remove("active");
+        flashScreen.textContent = "";
+
+        // Restaurar o som como estava antes
+        backgroundMusic.volume = previousVolume;
+        backgroundMusic.muted = wasMuted;
+
+        flashActive = false;
+
+        // Agendar o próximo flash
+        scheduleFlash();
+
+    }, flashDuration);
+}

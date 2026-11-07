@@ -1,0 +1,176 @@
+{
+  "root": {
+    "name": "C:",
+    "type": "folder",
+    "children": [
+      {
+        "name": "SECRET_FILES",
+        "type": "folder",
+        "target": "SECRET_FILES",
+        "locked": true,
+        "passwordHash": "6ecf763ff6e7cef7b47e6611e1bf76fe2608a2e32a97b2d88b083ae1d8d02c82"
+      },
+      {
+        "name": "DOCUMENTS",
+        "type": "folder",
+        "target": "documents"
+      }
+    ]
+  },
+  "SECRET_FILES": {
+    "name": "SECRET_FILES",
+    "type": "folder",
+    "children": [
+      {
+        "name": "ERROR",
+        "type": "folder",
+        "target": "error",
+        "locked": true,
+        "passwordHash": "35379d9c009e290d702b72abf3f5f9bdbaa7e00a63fc37b5174fc3825c8095e3"
+      },
+      {
+        "name": "....txt",
+        "type": "text",
+        "source": "documents",
+        "key": "..."
+      },
+      {
+        "name": "ALPHABET",
+        "type": "folder",
+        "target": "alph",
+        "locked": false
+      }
+    ]
+  },
+  "error": {
+    "name": "ERROR",
+    "type": "folder",
+    "children": [
+      {
+        "name": "Sarah.txt",
+        "type": "text",
+        "source": "documents",
+        "key": "1123"
+      },
+      {
+        "name": "???.txt",
+        "type": "text",
+        "source": "documents",
+        "key": "ding"
+      }
+    ]
+  },
+  "alph": {
+    "name": "ALPHABET",
+    "type": "folder",
+    "children": [
+      {
+        "name": "ALPHABET?.txt",
+        "type": "text",
+        "source": "documents",
+        "key": "alph"
+      }
+    ]
+  },
+  "documents": {
+    "name": "DOCUMENTS",
+    "type": "folder",
+    "children": [
+      {
+        "name": "USER",
+        "type": "folder",
+        "target": "user",
+        "locked": true,
+        "passwordHash": "c034b1da1d13a503faf39faf15fb7f05cc679506bdb2355d0b394935194ee201"
+      },
+      {
+        "name": "readme.txt",
+        "type": "text",
+        "source": "documents",
+        "key": "readme.txt"
+      },
+      {
+        "name": "record_07.txt",
+        "type": "text",
+        "source": "documents",
+        "key": "record_07.txt"
+      },
+      {
+        "name": "note.txt",
+        "type": "text",
+        "source": "documents",
+        "key": "note.txt"
+      }
+    ]
+  },
+  "user": {
+    "name": "USER",
+    "type": "folder",
+    "children": [
+      {
+        "name": "old_note.txt",
+        "type": "text",
+        "source": "documents",
+        "key": "old_note.txt"
+      },
+      {
+        "name": "input.log1",
+        "type": "text",
+        "source": "documents",
+        "key": "input.log1"
+      },
+      {
+        "name": "input.log2",
+        "type": "text",
+        "source": "documents",
+        "key": "input.log2"
+      },
+      {
+        "name": "TRASH",
+        "type": "folder",
+        "target": "trash"    
+      }
+    ]
+  },
+  "trash": {
+    "name": "TRASH",
+    "type": "folder",
+    "children": [
+      {
+        "name": "ACTION0007",
+        "type": "text",
+        "source": "documents",
+        "key": "action7"
+      },
+      {
+        "name": "IDEA-02",
+        "type": "folder",
+        "target": "idea2"
+      }
+    ]
+  },
+  "idea2": {
+    "name": "IDEA-02",
+    "type": "folder",
+    "children": [
+      {
+        "name": "IDEA-02",
+        "type": "text",
+        "source": "documents",
+        "key": "idea2.1"
+      },
+      {
+        "name": "NOTE",
+        "type": "text",
+        "source": "documents",
+        "key": "idea2.3"
+      },
+      {
+        "name": "IDEA-???",
+        "type": "text",
+        "source": "documents",
+        "key": "idea2.2"
+      }
+    ]
+  }
+}
