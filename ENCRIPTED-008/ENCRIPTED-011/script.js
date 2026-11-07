@@ -8,7 +8,7 @@
 // CONFIGURAÇÃO
 // ==========================================
 
-const DATA_PATH = "./data/";
+const DATA_PATH = "./DATA/";
 
 const DATA_FILES = {
     files: "files.json",
